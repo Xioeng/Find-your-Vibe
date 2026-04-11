@@ -1,73 +1,82 @@
-from typing import List, Dict, Tuple, Optional
-from dataclasses import dataclass
+"""
+Music Recommender System with pluggable scoring algorithms.
+"""
 
-@dataclass
-class Song:
-    """
-    Represents a song and its attributes.
-    Required by tests/test_recommender.py
-    """
-    id: int
-    title: str
-    artist: str
-    genre: str
-    mood: str
-    energy: float
-    tempo_bpm: float
-    valence: float
-    danceability: float
-    acousticness: float
+import pandas as pd
 
-@dataclass
-class UserProfile:
+from .scoring_algorithms import ScoringAlgorithm, WeightedScorer
+from .song import Song
+from .user_preferences import UserProfile
+
+
+def load_songs(csv_path: str) -> list[Song]:
     """
-    Represents a user's taste preferences.
-    Required by tests/test_recommender.py
+    Loads songs from a CSV file.
+
+    Args:
+        csv_path: Path to the CSV file containing songs.
+
+    Returns:
+        List of song dictionaries.
     """
-    favorite_genre: str
-    favorite_mood: str
-    target_energy: float
-    likes_acoustic: bool
+    print(f"Loading songs from {csv_path}...")
+    df = pd.read_csv(csv_path)
+    songs = [Song.from_dict(s) for s in df.to_dict("records")]
+    print(f"Loaded {len(songs)} songs.")
+    return songs
+
 
 class Recommender:
     """
-    OOP implementation of the recommendation logic.
-    Required by tests/test_recommender.py
-    """
-    def __init__(self, songs: List[Song]):
-        self.songs = songs
+    Recommender that uses pluggable scoring algorithms.
 
-    def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+    This class orchestrates song recommendations using different scoring
+    strategies that can be swapped at initialization or runtime.
+    """
 
-    def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+    def __init__(
+        self, songs: list[Song], algorithm: ScoringAlgorithm | None = None
+    ) -> None:
+        """
+        Initialize the recommender.
 
-def load_songs(csv_path: str) -> List[Dict]:
-    """
-    Loads songs from a CSV file.
-    Required by src/main.py
-    """
-    # TODO: Implement CSV loading logic
-    print(f"Loading songs from {csv_path}...")
-    return []
+        Args:
+            songs: List of Song objects.
+            algorithm: Scoring algorithm to use. Defaults to WeightedScorer.
+        """
+        self.songs: list[Song] = songs
+        self.algorithm: ScoringAlgorithm = algorithm or WeightedScorer()
 
-def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
-    """
-    Scores a single song against user preferences.
-    Required by recommend_songs() and src/main.py
-    """
-    # TODO: Implement scoring logic using your Algorithm Recipe from Phase 2.
-    # Expected return format: (score, reasons)
-    return []
+    def set_algorithm(self, algorithm: ScoringAlgorithm) -> None:
+        """
+        Change the scoring algorithm at runtime.
 
-def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
-    """
-    Functional implementation of the recommendation logic.
-    Required by src/main.py
-    """
-    # TODO: Implement scoring and ranking logic
-    # Expected return format: (song_dict, score, explanation)
-    return []
+        Args:
+            algorithm: The new scoring algorithm to use.
+        """
+        self.algorithm = algorithm
+
+    def recommend(
+        self, user_prefs: UserProfile, k: int = 5
+    ) -> list[tuple[Song, float, str]]:
+        """
+        Get top K recommendations using current algorithm.
+
+        Args:
+            user_prefs: UserProfile object with user preferences.
+            k: Number of recommendations to return.
+
+        Returns:
+            List of (Song, score, explanation) tuples.
+        """
+        scored_songs: list[tuple[Song, float, str]] = []
+
+        for song in self.songs:
+            result = self.algorithm.score(user_prefs, song)
+            explanation = " | ".join(result.reasons)
+            scored_songs.append((song, result.score, explanation))
+
+        # Sort by score descending
+        scored_songs.sort(key=lambda x: x[1], reverse=True)
+
+        return scored_songs[:k]

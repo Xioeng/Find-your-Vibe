@@ -9,3 +9,193 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Midnight Jazz,Blue Notes,jazz,relaxed,0.45,95,0.68,0.51,0.87
+12,Electric Dreams,Synth Wave,synthwave,moody,0.78,115,0.52,0.75,0.19
+13,Beach Vibes,Sunny Days,reggae,happy,0.65,100,0.79,0.71,0.68
+14,Mountain Echo,Folk Souls,folk,peaceful,0.32,85,0.72,0.48,0.91
+15,Urban Pulse,City Lights,hip-hop,energetic,0.88,128,0.68,0.84,0.12
+16,Ocean Waves,Nature Sounds,ambient,chill,0.25,55,0.63,0.38,0.95
+17,Neon Nights,Retro Vibes,synthwave,intense,0.85,135,0.55,0.79,0.15
+18,Golden Hour,Acoustic Hearts,acoustic,happy,0.58,102,0.82,0.65,0.88
+19,Basement Beats,Underground,electronic,focused,0.72,120,0.48,0.81,0.08
+20,Rainy Afternoon,Chill Collective,lofi,relaxed,0.38,75,0.61,0.59,0.84
+21,Techno Pulse,Digital Soul,techno,intense,0.89,140,0.46,0.87,0.06
+22,Sunset Boulevard,Indie Souls,indie,happy,0.71,118,0.78,0.74,0.42
+23,Deep Meditation,Zen Masters,ambient,peaceful,0.20,50,0.70,0.35,0.93
+24,Street Freestyle,Rap Kings,rap,energetic,0.86,125,0.64,0.82,0.14
+25,Starlight Serenade,Vocal Dreams,soul,relaxed,0.52,92,0.81,0.67,0.76
+26,Crystal Waves,Dream Waves,ambient,peaceful,0.22,52,0.68,0.36,0.94
+27,Summer Breeze,Tropical Beats,pop,happy,0.79,116,0.86,0.81,0.22
+28,Neon Glow,Synth Kings,synthwave,moody,0.82,125,0.51,0.77,0.18
+29,Forest Serenity,Nature Folk,folk,peaceful,0.28,80,0.74,0.45,0.93
+30,Urban Rhythm,City Groove,hip-hop,energetic,0.84,130,0.66,0.86,0.11
+31,Midnight Stars,Dream Pop,indie pop,happy,0.73,120,0.79,0.75,0.38
+32,Chill Sessions,Lo-Fi Beats,lofi,chill,0.39,76,0.57,0.61,0.79
+33,Rock Anthem,Thunder Road,rock,intense,0.89,150,0.52,0.68,0.09
+34,Sunday Morning,Acoustic Vibes,acoustic,happy,0.55,100,0.81,0.62,0.87
+35,Deep House,Electronic Pulse,electronic,focused,0.70,122,0.49,0.80,0.10
+36,Jazz Cafe,Blue Quartet,jazz,relaxed,0.43,93,0.70,0.52,0.86
+37,Island Paradise,Reggae Vibes,reggae,happy,0.68,102,0.80,0.72,0.66
+38,Silent Night,Ambient Life,ambient,chill,0.24,58,0.64,0.39,0.94
+39,Thunder Strike,Rock Kings,rock,intense,0.92,155,0.47,0.65,0.08
+40,Pop Sensation,Chart Toppers,pop,happy,0.81,120,0.85,0.80,0.19
+41,Techno Rush,Digital Beats,techno,intense,0.91,145,0.44,0.89,0.05
+42,Soul Journey,Soul Voices,soul,relaxed,0.50,90,0.82,0.65,0.75
+43,Hip Hop Flow,Rap Masters,rap,energetic,0.87,127,0.65,0.84,0.13
+44,Indie Electric,Indie Dreams,indie,happy,0.74,119,0.79,0.73,0.40
+45,Lofi Dreams,Study Beats,lofi,focused,0.41,79,0.58,0.59,0.81
+46,Synth Pop,Wave Riders,synthwave,moody,0.80,118,0.53,0.76,0.20
+47,Folk Melody,Acoustic Dreams,folk,peaceful,0.30,82,0.73,0.46,0.92
+48,Pop Party,Party Masters,pop,happy,0.84,124,0.87,0.82,0.17
+49,Electronic Vibe,Synth Lab,electronic,focused,0.73,125,0.50,0.82,0.09
+50,Jazz Standards,Classic Jazz,jazz,relaxed,0.44,92,0.69,0.50,0.88
+51,Beach Party,Summer Hits,pop,happy,0.80,122,0.83,0.79,0.23
+52,Night Club,Dance Kings,electronic,intense,0.88,135,0.52,0.85,0.07
+53,Chill Vibes,Relaxation Station,lofi,chill,0.37,74,0.59,0.60,0.83
+54,Rock Classics,Classic Rock,rock,intense,0.90,148,0.50,0.67,0.10
+55,Ambient Space,Space Sounds,ambient,peaceful,0.23,56,0.66,0.37,0.95
+56,Soul Serenade,Soul Singers,soul,relaxed,0.51,91,0.80,0.66,0.74
+57,Pop Hit,Chart Climbers,pop,happy,0.82,121,0.84,0.81,0.20
+58,Reggae Rhythm,Caribbean Beats,reggae,happy,0.66,101,0.78,0.70,0.67
+59,Indie Sunshine,Sunshine Indie,indie pop,happy,0.75,122,0.80,0.76,0.36
+60,Lofi Hip Hop,Study Friends,lofi,focused,0.40,78,0.60,0.58,0.80
+61,Synthwave Night,Neon Nights,synthwave,moody,0.81,120,0.52,0.78,0.19
+62,Folk Song,Rural Tales,folk,peaceful,0.29,83,0.71,0.47,0.91
+63,Hip Hop Beats,Beat Masters,hip-hop,energetic,0.86,129,0.67,0.85,0.12
+64,Techno Beat,Techno Queens,techno,intense,0.90,142,0.45,0.88,0.06
+65,Jazz Improvisation,Jazz Masters,jazz,relaxed,0.46,94,0.68,0.51,0.87
+66,Pop Dance,Dance Pop,pop,happy,0.83,123,0.86,0.83,0.18
+67,Electronic Music,Electronic Kings,electronic,focused,0.71,123,0.51,0.81,0.09
+68,Ambient Meditation,Meditation Sounds,ambient,peaceful,0.21,54,0.67,0.36,0.96
+69,Rock Power,Hard Rock,rock,intense,0.93,152,0.49,0.66,0.09
+70,Acoustic Beauty,Acoustic Songs,acoustic,happy,0.56,101,0.81,0.64,0.86
+71,Soul Music,Soul Classics,soul,relaxed,0.49,89,0.79,0.64,0.76
+72,Rap Flow,Rap Queens,rap,energetic,0.85,126,0.63,0.83,0.15
+73,Indie Folk,Folk Indie,indie,peaceful,0.33,87,0.75,0.50,0.89
+74,Lofi Chill,Chill Study,lofi,chill,0.36,72,0.61,0.57,0.84
+75,Pop Music,Pop Songs,pop,happy,0.81,119,0.82,0.78,0.21
+76,Reggae Vibes,Reggae Music,reggae,happy,0.67,103,0.77,0.69,0.65
+77,Synthwave Dreams,Dream Synth,synthwave,moody,0.79,117,0.54,0.74,0.21
+78,Folk Roots,Traditional Folk,folk,peaceful,0.31,84,0.72,0.49,0.90
+79,Hip Hop Groove,Groove Masters,hip-hop,energetic,0.87,131,0.69,0.87,0.11
+80,Techno Energy,High Energy Techno,techno,intense,0.92,148,0.43,0.90,0.04
+81,Jazz Cool,Cool Jazz,jazz,relaxed,0.42,91,0.67,0.49,0.89
+82,Pop Hits,Radio Pop,pop,happy,0.80,117,0.83,0.77,0.22
+83,Electronic Soul,Soulful Electronic,electronic,focused,0.72,124,0.52,0.79,0.11
+84,Ambient Calm,Peace and Calm,ambient,peaceful,0.25,57,0.65,0.38,0.93
+85,Rock Legends,Rock Classics,rock,intense,0.91,151,0.51,0.68,0.08
+86,Acoustic Warmth,Warm Acoustic,acoustic,happy,0.57,103,0.80,0.63,0.85
+87,Soul Depth,Deep Soul,soul,relaxed,0.48,88,0.78,0.63,0.77
+88,Rap Wisdom,Conscious Rap,rap,energetic,0.84,124,0.62,0.81,0.16
+89,Indie Wave,Wave Indie,indie,happy,0.72,117,0.77,0.72,0.41
+90,Lofi Study,Study Sessions,lofi,focused,0.38,77,0.58,0.59,0.82
+91,Synthwave Retro,Retro Synthwave,synthwave,moody,0.83,122,0.53,0.79,0.17
+92,Folk Harmony,Harmonic Folk,folk,peaceful,0.27,81,0.73,0.46,0.92
+93,Hip Hop Swagger,Swagger Rap,hip-hop,energetic,0.89,133,0.70,0.88,0.10
+94,Techno Motion,Motion Techno,techno,intense,0.88,140,0.47,0.86,0.07
+95,Jazz Groove,Groovy Jazz,jazz,relaxed,0.47,96,0.66,0.53,0.86
+96,Pop Celebration,Celebration Pop,pop,happy,0.85,125,0.88,0.84,0.16
+97,Electronic Dance,Dance Electronic,electronic,intense,0.85,128,0.55,0.84,0.08
+98,Ambient Flow,Flow Ambient,ambient,peaceful,0.26,59,0.62,0.40,0.92
+99,Rock Energy,Energetic Rock,rock,intense,0.94,156,0.46,0.69,0.07
+100,Acoustic Joy,Joyful Acoustic,acoustic,happy,0.59,105,0.83,0.66,0.84
+101,Soul Voice,Vocal Soul,soul,relaxed,0.53,93,0.81,0.68,0.73
+102,Rap Beat,Beat Rap,rap,energetic,0.88,129,0.66,0.85,0.12
+103,Indie Bright,Bright Indie,indie pop,happy,0.77,121,0.81,0.77,0.34
+104,Lofi Peace,Peaceful Lofi,lofi,chill,0.33,70,0.62,0.55,0.85
+105,Synthwave Neon,Neon Synthwave,synthwave,intense,0.84,128,0.54,0.80,0.16
+106,Folk River,River Folk,folk,peaceful,0.28,82,0.70,0.47,0.91
+107,Hip Hop Class,Class Hip Hop,hip-hop,energetic,0.85,128,0.68,0.83,0.13
+108,Techno Future,Future Techno,techno,intense,0.89,143,0.48,0.85,0.05
+109,Jazz Blue,Blue Jazz,jazz,moody,0.41,88,0.64,0.48,0.88
+110,Pop Fresh,Fresh Pop,pop,happy,0.79,116,0.81,0.76,0.24
+111,Electronic Pulse,Pulse Electronic,electronic,focused,0.74,126,0.53,0.82,0.08
+112,Ambient Drift,Drift Ambient,ambient,chill,0.22,53,0.63,0.35,0.95
+113,Rock Thunder,Thunder Rock,rock,intense,0.92,154,0.50,0.67,0.09
+114,Acoustic Glow,Glowing Acoustic,acoustic,happy,0.60,107,0.82,0.67,0.83
+115,Soul Heart,Heartfelt Soul,soul,relaxed,0.51,92,0.79,0.65,0.75
+116,Rap Kings,Kings Rap,rap,energetic,0.86,130,0.65,0.84,0.14
+117,Indie Dream,Dream Indie,indie,happy,0.73,119,0.78,0.74,0.39
+118,Lofi Night,Night Lofi,lofi,chill,0.34,73,0.59,0.58,0.81
+119,Synthwave Echo,Echo Synthwave,synthwave,moody,0.82,121,0.55,0.77,0.18
+120,Folk Song Story,Story Folk,folk,peaceful,0.30,85,0.74,0.48,0.90
+121,Hip Hop Street,Street Hip Hop,hip-hop,energetic,0.87,132,0.69,0.86,0.11
+122,Techno Underground,Underground Techno,techno,intense,0.91,146,0.46,0.87,0.06
+123,Jazz Night,Nighttime Jazz,jazz,relaxed,0.45,92,0.68,0.52,0.87
+124,Pop Summer,Summer Pop,pop,happy,0.82,120,0.85,0.80,0.19
+125,Electronic Deep,Deep Electronic,electronic,focused,0.70,121,0.50,0.79,0.10
+126,Ambient Peace,Peace Ambient,ambient,peaceful,0.24,56,0.64,0.37,0.94
+127,Rock Storm,Storm Rock,rock,intense,0.90,150,0.52,0.66,0.10
+128,Acoustic Fire,Fiery Acoustic,acoustic,happy,0.58,102,0.80,0.65,0.87
+129,Soul Whisper,Whispering Soul,soul,relaxed,0.50,90,0.80,0.66,0.75
+130,Rap Pride,Pride Rap,rap,energetic,0.85,127,0.64,0.82,0.15
+131,Indie Light,Light Indie,indie pop,happy,0.76,120,0.82,0.75,0.37
+132,Lofi Echo,Echo Lofi,lofi,focused,0.39,78,0.58,0.59,0.79
+133,Synthwave Vision,Vision Synthwave,synthwave,moody,0.80,119,0.52,0.75,0.20
+134,Folk Dream,Dream Folk,folk,peaceful,0.32,86,0.72,0.50,0.89
+135,Hip Hop Soul,Soul Hip Hop,hip-hop,energetic,0.88,131,0.70,0.87,0.10
+136,Techno Rush Hour,Rush Hour Techno,techno,intense,0.89,141,0.45,0.86,0.06
+137,Jazz Standard,Standard Jazz,jazz,relaxed,0.44,91,0.67,0.50,0.87
+138,Pop Wave,Wave Pop,pop,happy,0.81,118,0.84,0.79,0.20
+139,Electronic Vibe,Vibe Electronic,electronic,focused,0.73,124,0.51,0.81,0.09
+140,Ambient Serenity,Serene Ambient,ambient,peaceful,0.25,58,0.63,0.38,0.93
+141,Rock Highway,Highway Rock,rock,intense,0.93,153,0.48,0.68,0.08
+142,Acoustic Spark,Spark Acoustic,acoustic,happy,0.56,100,0.81,0.64,0.86
+143,Soul Vision,Vision Soul,soul,relaxed,0.52,94,0.81,0.67,0.74
+144,Rap Influence,Influence Rap,rap,energetic,0.84,125,0.63,0.81,0.16
+145,Indie Balance,Balance Indie,indie,happy,0.74,121,0.79,0.76,0.38
+146,Lofi Bloom,Bloom Lofi,lofi,chill,0.36,75,0.60,0.60,0.80
+147,Synthwave Motion,Motion Synthwave,synthwave,moody,0.81,120,0.53,0.76,0.19
+148,Folk Stream,Stream Folk,folk,peaceful,0.29,83,0.71,0.47,0.91
+149,Hip Hop Rhythm,Rhythm Hip Hop,hip-hop,energetic,0.86,129,0.67,0.85,0.12
+150,Techno Massive,Massive Techno,techno,intense,0.90,144,0.46,0.88,0.05
+151,Jazz Flow,Flow Jazz,jazz,relaxed,0.46,93,0.69,0.51,0.86
+152,Pop Glow,Glow Pop,pop,happy,0.83,122,0.86,0.81,0.18
+153,Electronic Surge,Surge Electronic,electronic,focused,0.71,122,0.49,0.80,0.10
+154,Ambient Dream,Dream Ambient,ambient,peaceful,0.23,55,0.65,0.36,0.94
+155,Rock Fire,Fire Rock,rock,intense,0.91,151,0.49,0.67,0.10
+156,Acoustic Melody,Melody Acoustic,acoustic,happy,0.57,104,0.82,0.66,0.85
+157,Soul Grace,Graceful Soul,soul,relaxed,0.49,89,0.78,0.64,0.76
+158,Rap Flow King,Flow King Rap,rap,energetic,0.87,128,0.65,0.84,0.13
+159,Indie Spark,Spark Indie,indie pop,happy,0.75,120,0.80,0.74,0.36
+160,Lofi Stream,Stream Lofi,lofi,chill,0.37,76,0.57,0.61,0.78
+161,Synthwave Legacy,Legacy Synthwave,synthwave,moody,0.79,118,0.51,0.74,0.21
+162,Folk Trail,Trail Folk,folk,peaceful,0.28,81,0.72,0.46,0.92
+163,Hip Hop Wave,Wave Hip Hop,hip-hop,energetic,0.89,132,0.70,0.88,0.10
+164,Techno Pulse Beat,Pulse Beat Techno,techno,intense,0.88,139,0.47,0.85,0.07
+165,Jazz Midnight,Midnight Jazz,jazz,moody,0.40,87,0.62,0.47,0.89
+166,Pop Radiance,Radiance Pop,pop,happy,0.80,116,0.82,0.77,0.23
+167,Electronic Wave,Wave Electronic,electronic,intense,0.84,127,0.54,0.83,0.09
+168,Ambient Journey,Journey Ambient,ambient,peaceful,0.26,60,0.64,0.39,0.92
+169,Rock Blaze,Blaze Rock,rock,intense,0.92,152,0.51,0.68,0.09
+170,Acoustic Warmth,Warmth Acoustic,acoustic,happy,0.59,106,0.83,0.68,0.84
+171,Soul Melody,Melody Soul,soul,relaxed,0.51,92,0.80,0.66,0.74
+172,Rap Ascent,Ascent Rap,rap,energetic,0.86,129,0.64,0.83,0.14
+173,Indie Motion,Motion Indie,indie,happy,0.72,118,0.77,0.73,0.40
+174,Lofi Wings,Wings Lofi,lofi,focused,0.40,80,0.59,0.60,0.79
+175,Synthwave Dawn,Dawn Synthwave,synthwave,moody,0.82,123,0.54,0.78,0.17
+176,Folk Prayer,Prayer Folk,folk,peaceful,0.31,84,0.73,0.49,0.90
+177,Hip Hop Crown,Crown Hip Hop,hip-hop,energetic,0.87,130,0.68,0.86,0.11
+178,Techno Power,Power Techno,techno,intense,0.89,142,0.44,0.86,0.06
+179,Jazz Evening,Evening Jazz,jazz,relaxed,0.43,90,0.66,0.49,0.88
+180,Pop Dynamite,Dynamite Pop,pop,happy,0.84,124,0.87,0.83,0.17
+181,Electronic Rhythm,Rhythm Electronic,electronic,focused,0.72,125,0.52,0.81,0.09
+182,Ambient Voyage,Voyage Ambient,ambient,chill,0.21,52,0.62,0.34,0.96
+183,Rock Fury,Fury Rock,rock,intense,0.93,155,0.50,0.69,0.08
+184,Acoustic Paradise,Paradise Acoustic,acoustic,happy,0.60,108,0.84,0.69,0.84
+185,Soul Dawn,Dawn Soul,soul,relaxed,0.53,93,0.82,0.68,0.73
+186,Rap Summit,Summit Rap,rap,energetic,0.85,126,0.63,0.82,0.15
+187,Indie Glow,Glow Indie,indie pop,happy,0.76,122,0.81,0.77,0.35
+188,Lofi Wonder,Wonder Lofi,lofi,chill,0.35,74,0.61,0.57,0.82
+189,Synthwave Icon,Icon Synthwave,synthwave,moody,0.80,117,0.52,0.75,0.20
+190,Folk Odyssey,Odyssey Folk,folk,peaceful,0.30,85,0.71,0.48,0.91
+191,Hip Hop Apex,Apex Hip Hop,hip-hop,energetic,0.88,131,0.69,0.87,0.11
+192,Techno Inferno,Inferno Techno,techno,intense,0.91,145,0.47,0.89,0.05
+193,Jazz Sessions,Sessions Jazz,jazz,relaxed,0.45,92,0.68,0.51,0.87
+194,Pop Brilliance,Brilliance Pop,pop,happy,0.82,121,0.85,0.81,0.19
+195,Electronic Flux,Flux Electronic,electronic,focused,0.70,123,0.50,0.79,0.10
+196,Ambient Whisper,Whisper Ambient,ambient,peaceful,0.24,57,0.63,0.37,0.94
+197,Rock Torrent,Torrent Rock,rock,intense,0.91,149,0.51,0.66,0.10
+198,Acoustic Haven,Haven Acoustic,acoustic,happy,0.58,103,0.81,0.66,0.86
+199,Soul Harmony,Harmony Soul,soul,relaxed,0.50,91,0.79,0.65,0.76
+200,Rap Revolution,Revolution Rap,rap,energetic,0.87,131,0.68,0.86,0.12

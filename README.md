@@ -17,19 +17,89 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+Essentially, the system will create a `UserProfile` that captures a user's music preferences, and then compute a score for each `Song` in the catalog based on how well it matches the user's profile. The songs with the highest scores will be recommended. The 'Recommender' class will handle the logic for computing these scores and selecting the top recommendations.
+In this case, `UserProfile` might include preferences for genre, mood, energy level, and tempo and probably a list of songs.
 
-Some prompts to answer:
+So far the features to be used will be
+- Genre
+- Mood
+- Energy
+- Danceability
+- Acousticness
+- Tempo
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+### Scoring Logic
+Let:
 
-You can include a simple diagram or bullet list if helpful.
+- $s$ = a song
+- $u$ = a user profile
 
----
+Define:
+
+- $G(s, u)$: 1 if the song’s genre matches the user’s - favorite genre, otherwise 0.5
+- $M(s, u)$: 1 if the song’s mood matches the user’s favorite mood, otherwise 0.5
+- $E(s, u)$: 1 minus the absolute difference between the song’s energy and the user’s target energy, capped at a maximum penalty of 0.5 (so: $E(s, u) = 1 - \min(|s_{energy} - u_{energy}|, 0.5)$)
+- $A(s, u)$: If the user likes acoustic, use the song’s acousticness value; otherwise, use 1 minus the song’s acousticness value
+- $D(s)$: The song’s danceability value
+
+The final score is:
+
+$Score(s, u) = 100 × [
+0.35 × G(s, u) +
+0.30 × M(s, u) +
+0.20 × E(s, u) +
+0.10 × A(s, u) +
+0.05 × D(s)
+]$
+
+### Scoring FLow
+                         INPUT
+                           |
+                           v
+                  User Preferences
+              (Genre, Artists, Tempo, etc.)
+                           |
+                           v
+                  Load Songs from CSV
+                           |
+                           v
+                 Initialize Scores List
+                           |
+                           v
+        ==========================================
+        |   FOR EACH SONG IN CSV                |
+        |                                        |
+        |   1. Extract Song Features             |
+        |      (Genre, Artist, Tempo, etc.)      |
+        |                                        |
+        |   2. Apply Scoring Logic               |
+        |      Match Against User Preferences    |
+        |                                        |
+        |   3. Calculate Match Score             |
+        |      0-100 Points                      |
+        |                                        |
+        |   4. Add Score to List                 |
+        |                                        |
+        ==========================================
+                           |
+                           v
+                 Sort Songs by Score
+                  (Descending Order)
+                           |
+                           v
+              Filter Top K Songs
+           (K = Number of Recommendations)
+                           |
+                           v
+         Generate Recommendation List
+                 (With Match Scores)
+                           |
+                           v
+                        OUTPUT
+                           |
+          Top K Recommendations Ranked
+            by Match Score (Best to Worst)
+
 
 ## Getting Started
 
@@ -68,11 +138,26 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
+### Multiple User Profiles
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+I performed some tests with different user profiles to see how the recommendations changed. In this case, I used three different user profiles one that liked jazz music, one that liked pop music, and one that liked rock music. As expected, the jazz lover got mostly jazz songs recommended, the pop lover got mostly pop songs, and the rock lover got mostly rock songs. However, there were some cross-genre recommendations that added variety to each user's list.
+
+![Pop User Profile](images/pop.png)
+
+![Jazz User Profile](images/jazz.png)
+
+![Rock User Profile](images/rock.png)
+
+Nevertheless, when the song list is increased, the system tends to recommend highly and mainly songs from the genre that the user prefers, which can lead to a lack of diversity in the recommendations.
+
+![Pop User Profile with More Songs](images/pop_more_songs.png)
+
+### Changing Weights 
+
+We might agree that the most important factor in a music recommendation is genre. However, it seems that genre is also correlated to other factors; decreasing it might not lead to more diverse recommendations. I changed from 0.35 to 0.05 the weight of genre, yet the recommended songs were still mostly from the user's preferred genre. 
+
+![Jazz User Profile with Lower Genre Weight](images/jazz_low_genre_weight.png)
+
 
 ---
 
@@ -80,13 +165,9 @@ Use this section to document the experiments you ran. For example:
 
 Summarize some limitations of your recommender.
 
-Examples:
+In a tiny catalog the system can only recommend songs that are somewhat similar to the user's preferences, and seem to be diverse. However, in a larger catalog, the system tends to recommend songs that are very similar to the user's preferences, which can lead to a lack of diversity in the recommendations. This is basically a form of overfitting to the user's preferences, and the abundance of songs makes it more likely that the system will find songs that are very similar to the user's preferences.
 
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+Also, the system does not consider any user history or feedback, which means that it cannot learn from the user's interactions with the recommendations. To score better the category fields, there should be any sense of similarity between genres. For example, if a user likes jazz, it would make sense to recommend songs from genres that are similar to jazz, such as blues or soul. In the same fashion, if a user likes high energy songs, it would make sense to recommend songs that are also high energy, even if they are not in the same genre.
 
 ---
 
