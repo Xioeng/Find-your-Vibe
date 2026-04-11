@@ -16,3 +16,5 @@ venv/
 
 # mypy cache
 .mypy_cache/
+
+.claude
