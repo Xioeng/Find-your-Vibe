@@ -18,3 +18,8 @@ venv/
 .mypy_cache/
 
 .claude
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+.github/

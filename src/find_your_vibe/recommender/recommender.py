@@ -4,9 +4,8 @@ Music Recommender System with pluggable scoring algorithms.
 
 import pandas as pd
 
+from ..domain import Song, UserProfile
 from .scoring_algorithms import ScoringAlgorithm, WeightedScorer
-from .song import Song
-from .user_preferences import UserProfile
 
 
 def load_songs(csv_path: str) -> list[Song]:

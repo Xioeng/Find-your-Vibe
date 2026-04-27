@@ -1,6 +1,6 @@
 """Tests for the UserProfile class."""
 
-from src.user_preferences import UserProfile
+from src.find_your_vibe.domain import UserProfile
 
 
 def test_user_profile_creation():

@@ -5,14 +5,14 @@ import sys
 
 # Add src directory to sys.path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from src.recommender import Recommender, load_songs
-from src.scoring_algorithms import (
+from src.find_your_vibe.domain import Song, UserProfile
+from src.find_your_vibe.recommender import (
     EnergyFocusedScorer,
+    Recommender,
     SimpleGenreScorer,
     WeightedScorer,
+    load_songs,
 )
-from src.song import Song
-from src.user_preferences import UserProfile
 
 
 def create_test_songs() -> list[Song]:

@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -14,6 +14,7 @@ class UserProfile:
     favorite_mood: str
     target_energy: float
     likes_acoustic: bool
+    song_list: list = field(default_factory=list)  # Songs user has liked
 
     @classmethod
     def from_dict(cls, data: dict) -> "UserProfile":

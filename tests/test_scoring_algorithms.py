@@ -1,13 +1,12 @@
 """Tests for the scoring algorithms."""
 
-from src.scoring_algorithms import (
+from src.find_your_vibe.domain import Song, UserProfile
+from src.find_your_vibe.recommender import (
     EnergyFocusedScorer,
     ScoringResult,
     SimpleGenreScorer,
     WeightedScorer,
 )
-from src.song import Song
-from src.user_preferences import UserProfile
 
 
 def create_test_song(

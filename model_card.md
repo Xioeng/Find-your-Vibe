@@ -101,9 +101,3 @@ On the other hand, more scoring algorithms should be tested, for example, a more
 
 Finally, an interactive but simple user interface could be developed to allow users to input their preferences and see the recommendations, probably in a web-based format like streamlit.
 
-
----
-
-## 9. Personal Reflection  
-
-This was a quite new experience for me, I had certain interest as user and as a developer to get to know how these things work. Furthermore, this is an opportunity to delve into applications of AI that are not only useful but also fun and engaging that go beyond the things I am used to.

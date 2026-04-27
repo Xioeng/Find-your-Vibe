@@ -2,8 +2,7 @@
 
 import pytest
 
-from src.song import Song
-from src.user_preferences import UserProfile
+from src.find_your_vibe.domain import Song, UserProfile
 
 
 @pytest.fixture

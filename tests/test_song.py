@@ -1,6 +1,6 @@
 """Tests for the Song class."""
 
-from src.song import Song
+from src.find_your_vibe.domain import Song
 
 
 def test_song_creation():

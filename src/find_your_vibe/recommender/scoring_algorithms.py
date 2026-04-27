@@ -7,8 +7,7 @@ This module contains different strategies for scoring songs based on user prefer
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
-from .song import Song
-from .user_preferences import UserProfile
+from ..domain import Song, UserProfile
 
 
 @dataclass

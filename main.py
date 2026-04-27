@@ -5,14 +5,14 @@ This file helps you quickly run and test your recommender with different
 scoring algorithms.
 """
 
-from src.recommender import Recommender, load_songs
-from src.scoring_algorithms import (
+from src.find_your_vibe.domain import Song, UserProfile
+from src.find_your_vibe.recommender import (
     EnergyFocusedScorer,
+    Recommender,
     SimpleGenreScorer,
     WeightedScorer,
+    load_songs,
 )
-from src.song import Song
-from src.user_preferences import UserProfile
 
 
 def main() -> None:
