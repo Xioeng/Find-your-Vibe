@@ -8,16 +8,16 @@ class Song:
     Required by tests/test_recommender.py
     """
 
-    id: int
-    title: str
-    artist: str
-    genre: str
-    mood: str
-    energy: float
-    tempo_bpm: float
-    valence: float
-    danceability: float
-    acousticness: float
+    id: int = 0
+    title: str = "Unknown Title"
+    artist: str = "Unknown Artist"
+    energy: float = 0.5  # 0.0-1.0
+    mood: str = "neutral"  # "happy", "sad", "energetic", "calm", etc.
+    valence: float = 0.5  # 0.0-1.0 (musical positiveness)
+    danceability: float = 0.5  # 0.0-1.0
+    acousticness: float = 0.5  # 0.0-1.0
+    tempo_bpm: int = 120  # beats per minute (estimate)
+    genre: str = "unknown"  # Inferred genre or style (e.g., "rock", "pop", "jazz", "hip-hop", etc.)
 
     @classmethod
     def from_dict(cls, data: dict) -> "Song":

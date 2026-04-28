@@ -2,12 +2,11 @@
 
 from .artist_discovery_service import ArtistDiscoveryService
 from .llm_analyzer import AudioFeatures, GeminiAnalyzer
+from .music_client import MusicBrainzClient
 from .song_enrichment_service import SongEnrichmentService
-from .spotify_client import MusicBrainzClient, MusicBrainzSong
 
 __all__ = [
     "MusicBrainzClient",
-    "MusicBrainzSong",
     "GeminiAnalyzer",
     "AudioFeatures",
     "SongEnrichmentService",

@@ -2,27 +2,8 @@
 Music Recommender System with pluggable scoring algorithms.
 """
 
-import pandas as pd
-
 from ..domain import Song, UserProfile
 from .scoring_algorithms import ScoringAlgorithm, WeightedScorer
-
-
-def load_songs(csv_path: str) -> list[Song]:
-    """
-    Loads songs from a CSV file.
-
-    Args:
-        csv_path: Path to the CSV file containing songs.
-
-    Returns:
-        List of song dictionaries.
-    """
-    print(f"Loading songs from {csv_path}...")
-    df = pd.read_csv(csv_path)
-    songs = [Song.from_dict(s) for s in df.to_dict("records")]
-    print(f"Loaded {len(songs)} songs.")
-    return songs
 
 
 class Recommender:
@@ -34,7 +15,7 @@ class Recommender:
     """
 
     def __init__(
-        self, songs: list[Song], algorithm: ScoringAlgorithm | None = None
+        self, songs: list[Song], algorithm: ScoringAlgorithm = WeightedScorer()
     ) -> None:
         """
         Initialize the recommender.
@@ -44,7 +25,7 @@ class Recommender:
             algorithm: Scoring algorithm to use. Defaults to WeightedScorer.
         """
         self.songs: list[Song] = songs
-        self.algorithm: ScoringAlgorithm = algorithm or WeightedScorer()
+        self.algorithm: ScoringAlgorithm = algorithm
 
     def set_algorithm(self, algorithm: ScoringAlgorithm) -> None:
         """

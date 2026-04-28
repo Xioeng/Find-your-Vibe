@@ -2,6 +2,6 @@
 
 from .domain.song import Song
 from .domain.user_preferences import UserProfile
-from .recommender.recommender import Recommender, load_songs
+from .recommender.recommender import Recommender
 
-__all__ = ["Recommender", "load_songs", "Song", "UserProfile"]
+__all__ = ["Recommender", "Song", "UserProfile"]

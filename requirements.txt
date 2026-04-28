@@ -1,6 +1,5 @@
 pandas
 pytest
 streamlit
-spotipy
 musicbrainzngs
-google-generativeai
+google-genai

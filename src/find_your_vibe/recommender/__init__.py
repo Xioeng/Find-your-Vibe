@@ -1,6 +1,6 @@
 """Recommendation engine package."""
 
-from .recommender import Recommender, load_songs
+from .recommender import Recommender
 from .scoring_algorithms import (
     EnergyFocusedScorer,
     ScoringAlgorithm,
@@ -11,7 +11,6 @@ from .scoring_algorithms import (
 
 __all__ = [
     "Recommender",
-    "load_songs",
     "ScoringResult",
     "ScoringAlgorithm",
     "WeightedScorer",

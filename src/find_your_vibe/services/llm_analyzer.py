@@ -2,7 +2,6 @@
 
 import json
 from dataclasses import dataclass
-from typing import Optional
 
 import google.genai as genai
 
@@ -11,12 +10,13 @@ import google.genai as genai
 class AudioFeatures:
     """Container for inferred audio features from Gemini."""
 
-    energy: float  # 0.0-1.0
-    mood: str  # "happy", "sad", "energetic", "calm", etc.
-    valence: float  # 0.0-1.0 (musical positiveness)
-    danceability: float  # 0.0-1.0
-    acousticness: float  # 0.0-1.0
-    tempo_bpm: int  # beats per minute (estimate)
+    energy: float = 0.5  # 0.0-1.0
+    mood: str = "neutral"  # "happy", "sad", "energetic", "calm", etc.
+    valence: float = 0.5  # 0.0-1.0 (musical positiveness)
+    danceability: float = 0.5  # 0.0-1.0
+    acousticness: float = 0.5  # 0.0-1.0
+    tempo_bpm: int = 120  # beats per minute (estimate)
+    genre: str = "unknown"  # Inferred genre or style (e.g., "rock", "pop", "jazz", "hip-hop", etc.)
 
 
 class GeminiAnalyzer:
@@ -29,9 +29,7 @@ class GeminiAnalyzer:
     def __init__(self, api_key: str, model: str) -> None:
         self.api_key = api_key
         self.model = model
-        self.client = None
-        if api_key:
-            self.client = genai.Client(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
 
     def is_configured(self) -> bool:
         """Return whether an API key is available."""
@@ -92,6 +90,7 @@ Return JSON array (one object per song):
     {{
         "energy": <float 0-1>,
         "mood": "<string: happy, sad, energetic, calm, melancholic, uplifting, dark, neutral, etc>",
+        "genre": "<string: inferred genre or style>",
         "valence": <float 0-1>,
         "danceability": <float 0-1>,
         "acousticness": <float 0-1>,
@@ -136,10 +135,10 @@ Example response for 2 songs:
         try:
             # Clean up response
             json_str = response_text.strip()
-            if "```" in json_str:
-                json_str = json_str.split("```")[1]
-                if json_str.startswith("json"):
-                    json_str = json_str[4:]
+            # if "```" in json_str:
+            #     json_str = json_str.split("```")[1]
+            #     if json_str.startswith("json"):
+            #         json_str = json_str[4:]
 
             data_array = json.loads(json_str.strip())
 
@@ -158,6 +157,7 @@ Example response for 2 songs:
                     danceability=float(data.get("danceability", 0.5)),
                     acousticness=float(data.get("acousticness", 0.5)),
                     tempo_bpm=int(data.get("tempo_bpm", 120)),
+                    genre=str(data.get("genre", "unknown")),
                 )
                 features_list.append(features)
 
@@ -165,10 +165,3 @@ Example response for 2 songs:
         except (json.JSONDecodeError, ValueError, KeyError) as e:
             print(f"Failed to parse batch response: {e}")
             raise
-
-    def summarize_tracks(self, track_names: list[str]) -> str:
-        """Create a simple summary for a list of track names."""
-        if not track_names:
-            return "No tracks available to analyze."
-        sample = ", ".join(track_names[:5])
-        return f"Quick trend summary based on tracks: {sample}."

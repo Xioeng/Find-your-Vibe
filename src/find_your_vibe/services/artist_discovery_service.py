@@ -14,6 +14,7 @@ import musicbrainzngs
 from src.find_your_vibe.domain.song import Song
 from src.find_your_vibe.domain.user_preferences import UserProfile
 from src.find_your_vibe.services.llm_analyzer import GeminiAnalyzer
+from src.find_your_vibe.services.music_client import MusicBrainzClient
 
 
 class ArtistDiscoveryService:
@@ -36,9 +37,7 @@ class ArtistDiscoveryService:
         self.api_key = gemini_api_key
         self.model = model
         self.analyzer = GeminiAnalyzer(api_key=gemini_api_key, model=model)
-        musicbrainzngs.set_useragent(
-            "find-your-vibe", "0.1.0", contact="student@example.com"
-        )
+        self.mb_client = MusicBrainzClient()
 
     def discover_songs_for_user(
         self,
@@ -73,7 +72,9 @@ class ArtistDiscoveryService:
         print("  2️⃣  Searching MusicBrainz for singles...")
         all_songs = []
         for artist_name in artists:
-            songs = self._discover_artist_singles(artist_name, limit=songs_per_artist)
+            songs = self.mb_client.discover_artist_singles(
+                artist_name, limit=songs_per_artist
+            )
             all_songs.extend(songs)
             print(f"     ✓ {artist_name}: {len(songs)} songs")
 
@@ -163,7 +164,7 @@ class ArtistDiscoveryService:
                         id=hash(f"{song['id']}_{song['title']}") % (10**9),
                         title=song["title"],
                         artist=song["artist"],
-                        genre="_inferred_",
+                        genre=features.genre,
                         mood=features.mood,
                         energy=features.energy,
                         tempo_bpm=features.tempo_bpm,
@@ -192,13 +193,9 @@ class ArtistDiscoveryService:
         """
         song_history = ""
         if user_profile.song_list:
-            songs = ", ".join(
-                [
-                    f"{s}" if isinstance(s, str) else str(s)
-                    for s in user_profile.song_list[:5]
-                ]
+            song_history = ", ".join(
+                [f"{song.title} by {song.artist}" for song in user_profile.song_list]
             )
-            song_history = f"\nRecent likes: {songs}"
 
         acoustic_text = (
             "Likes acoustic"
@@ -208,7 +205,7 @@ class ArtistDiscoveryService:
 
         return f"""You are a music expert. Recommend {num_artists} artists.
 Based on the user profile, suggest well-known artists that match their
-preferences and past likes.
+preferences and past likes. Include artists that the user likes already.
 
 User: {user_profile.name}
 - Favorite Genre: {user_profile.favorite_genre}

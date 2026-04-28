@@ -15,6 +15,7 @@ class UserProfile:
     target_energy: float
     likes_acoustic: bool
     song_list: list = field(default_factory=list)  # Songs user has liked
+    current_mood: str = "Neutral"  # User's current mood state
 
     @classmethod
     def from_dict(cls, data: dict) -> "UserProfile":
@@ -29,5 +30,6 @@ class UserProfile:
         return (
             f"User {self.name} (ID: {self.id}): Genre: {self.favorite_genre}, "
             f"Mood: {self.favorite_mood}, Energy: {self.target_energy}, "
+            f"Current mood: {self.current_mood}, "
             f"{acoustic_pref}"
         )
